@@ -1,0 +1,37 @@
+{% extends 'base.html'%} {% block head %}
+<title>Create Post</title>
+{% endblock %} {% block body %}
+
+<h1>Create A New Blog Post</h1>
+<form action="/createPosts" method="POST">
+  <div class="mb-3">
+  <label for="title" class="form-label">Title</label>
+  <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+</div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea
+      class="form-control"
+      id="content"
+      name="content"
+      rows="3"
+      required
+    ></textarea>
+  </div>
+    <div class="mb-3">
+  <label for="title" class="form-label">Author</label>
+  <input type="text" class="form-control" id="author" name="author" placeholder="Enter Author">
+</div>
+  <input
+    class="btn btn-primary"
+    type="submit"
+    name="submit"
+    id="submit"
+    value="CREATE"
+  />
+</form>
+<br>
+<a class="btn btn-primary" href="/posts">All Posts</a>
+<br>
+
+{% endblock %}
